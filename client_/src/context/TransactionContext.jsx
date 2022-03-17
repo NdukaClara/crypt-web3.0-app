@@ -31,7 +31,7 @@ export const TransactionProvider = ({ children }) => {
     const getAllTransactions = async () => {
         try {
             if (ethereum) {
-                const transactionContract = createEthereumContract();
+                const transactionContract = getEthereumContract();
 
                 const availableTransactions = await transactionContract.getAllTransactions();
 
@@ -77,7 +77,7 @@ export const TransactionProvider = ({ children }) => {
     const checkIfTransactionsExist = async () => {
         try {
             if (ethereum) {
-                const transactionContract = createEthereumContract();
+                const transactionContract = getEthereumContract();
                 const currentTransactionCount = await transactionContract.getTransactionCount();
 
                 window.localStorage.setItem("transactionCount", currentTransactionCount);
@@ -109,7 +109,7 @@ export const TransactionProvider = ({ children }) => {
             if (ethereum) {
                 // get the data from the form
                 const { addressTo, amount, keyword, message } = formData;
-                const transactionContract = createEthereumContract();
+                const transactionContract = getEthereumContract();
                 const parsedAmount = ethers.utils.parseEther(amount);
 
                 await ethereum.request({

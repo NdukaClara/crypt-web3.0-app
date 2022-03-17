@@ -5,8 +5,8 @@
  Created using TailwindCss, React and solidity smart contract.
  
  Other tools:
- Alchemy
- Hardhat
- Ethers
+ Alchemy,
+ Hardhat,
+ Ethers package.
  
  
